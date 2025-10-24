@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thrift Shop</title>
+  <link rel="icon" type="image/jpeg" href="LOGS.jpg">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar section-content">
+      <a href="#" class="nav-logo">
+        <img src="LOGS.jpg" alt="Logo" class="logo-img">
+        <h2 class="logo-text">Thrift Shop</h2>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#choose-us" class="nav-link">Why Us?</a></li>
+        <li><a href="#feedback" class="nav-link">Feedback</a></li>
+        <li><a href="#info" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="about" class="section about">
+  <div class="about-container">
+    <div class="about-logo">
+      <img src="LOGS.jpg" alt="Thrift Shop Logo">
+    </div>
+
+    <div class="about-text">
+      <h1>Maxine Clotheshoppe</h1>
+      <p>
+        <b>Welcome to our thrift shop!</b> <br>
+        We offer a wide variety of affordable, high-quality kids’ wear — <br>
+        including shirts, dresses, pants, and accessories — <br>
+        giving parents the chance to dress their children in style and comfort, <br>
+        while promoting sustainability, saving money, and giving pre-loved clothes a new life.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="products" class="products section-content">
+  <h2 class="section-title"> Our Products</h2>
+  <div class="product-grid">
+
+
+    <div class="product-card">
+      <img src="1pro.jpg" alt="Vintage Shirt" />
+      <h3>Long Sleeve</h3>
+      <p>₱100</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+
+    <div class="product-card">
+      <img src="2pro.jpg" alt="Denim Jacket" />
+      <h3>Pants</h3>
+      <p>₱150</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+  
+    <div class="product-card">
+      <img src="3po.jpg" alt="Retro Dress" />
+      <h3>Long Sleeve</h3>
+      <p>₱100</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+
+    <div class="product-card">
+      <img src="4pro.jpg" alt="Kids Hoodie" />
+      <h3>Pants</h3>
+      <p>₱200</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+
+    <div class="product-card">
+      <img src="5pro.jpg" alt="Summer Dress" />
+      <h3>T-shirt</h3>
+      <p>₱200</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+ 
+    <div class="product-card">
+      <img src="6pro.jpg" alt="Baby Romper" />
+      <h3>T-shirt</h3>
+      <p>₱180</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+
+ 
+  <section id="choose-us" class="choose-box">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li> Affordable and high-quality clothes</li>
+        <li> Sustainable and eco-friendly</li>
+        <li> Fast delivery & easy transactions</li>
+        <li> Trendy and unique styles</li>
+      </ul>
+  </section>
+
+  <section id="feedback" class="section feedback">
+    <div class="section-content">
+      <h2>FEEDBACK</h2>
+      <div class="feedback-grid">
+        <div class="feedback-card">“Love the quality! Everything looks brand new.” – Mia</div>
+        <div class="feedback-card">“Affordable and stylish, I’ll buy again!” – John</div>
+        <div class="feedback-card">“Fast delivery and great service.” – Lara</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="info" class="section contact">
+    <div class="section-content">
+      <h2>CONTACT US</h2>
+      <p><strong>Name:</strong> Mary Anne Belen </p>
+      <p><strong>Email:</strong> lhadyrash27@gmail.com</p>
+      <p><strong>Contact:</strong> 0930-389-3965</p>
+      <p><strong>Address:</strong> 3409 Purok 12, Litex Rd, Commonwealth, Q.C.</p>
+    </div>
+  </section>
+
+  <div class="cart" id="cart">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <p id="totalPrice">Total: ₱0</p>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
+
+
+  <div class="checkout-popup" id="checkoutPopup">
+    <div class="popup-content">
+      <h3>Checkout</h3>
+      <form id="checkoutForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="text" placeholder="Your Address" required />
+        <button type="submit">Submit</button>
+      </form>
+      <div class="thankyou-message" id="thankYouMessage">
+        ✅ Thank you for ordering at Thrift Shop!
+        <button id="closePopup">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Thrift Shop | Developed by <strong>Glendave Demore and Jayford Santos</strong></p>
+  </footer>
+
+  <script>
+    const cartItems = document.getElementById('cartItems');
+    const totalPriceEl = document.getElementById('totalPrice');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const checkoutPopup = document.getElementById('checkoutPopup');
+    const checkoutForm = document.getElementById('checkoutForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const closePopup = document.getElementById('closePopup');
+
+    let total = 0;
+
+    addToCartBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const product = btn.parentElement;
+        const name = product.querySelector('h3').innerText;
+        const price = parseInt(product.querySelector('p').innerText.replace('₱', ''));
+
+        const li = document.createElement('li');
+        li.textContent = `${name} - ₱${price}`;
+        cartItems.appendChild(li);
+
+        total += price;
+        totalPriceEl.textContent = `Total: ₱${total}`;
+      });
+    });
+
+    checkoutBtn.addEventListener('click', () => {
+      checkoutPopup.style.display = 'flex';
+    });
+
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      checkoutForm.style.display = 'none';
+      thankYouMessage.style.display = 'block';
+    });
+
+    closePopup.addEventListener('click', () => {
+      checkoutPopup.style.display = 'none';
+      checkoutForm.style.display = 'block';
+      thankYouMessage.style.display = 'none';
+      cartItems.innerHTML = '';
+      total = 0;
+      totalPriceEl.textContent = 'Total: ₱0';
+    });
+  </script>
+</body>
+</html>
